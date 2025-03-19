@@ -38,7 +38,7 @@ def doar():
         return jsonify({"erro": "Todos os campos são obrigatórios"}), 400
     
     with sqlite3.connect('database.db') as conn:
-        conn.execute (f""" INSERT INTO livros (titulo, categoria, autor, imagem_url)
+        conn.execute (""" INSERT INTO livros (titulo, categoria, autor, imagem_url)
                      VALUES(?,?,?,?)
 
                         """, (titulo, categoria, autor, imagem_url))
